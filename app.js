@@ -17,7 +17,7 @@ function cargar() {
   try { S = JSON.parse(localStorage.getItem(CLAVE)); } catch { S = null; }
   if (!S || !Array.isArray(S.rutinas)) {
     const ej = crearRutina(15, 'casa');
-    S = { nombre: '', voz: true, historial: [], rutinas: [{ ...ej, id: nuevoId(), nombre: 'Ejemplo: 15 minutos en casa', veces: 0 }] };
+    S = { nombre: '', voz: false, historial: [], rutinas: [{ ...ej, id: nuevoId(), nombre: 'Ejemplo: 15 minutos en casa', veces: 0 }] };
     guardar();
   }
 }
