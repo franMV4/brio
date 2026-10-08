@@ -47,6 +47,7 @@ function ingredientes(r) {
   if (eq.has('silla')) l.push('Una silla firme, sin ruedas');
   if (eq.has('pesas')) l.push('Dos pesas ligeras o dos botellas de agua llenas');
   if (eq.has('goma')) l.push('Una goma elástica de ejercicio');
+  if (eq.has('barra')) l.push('Una barra con poco peso');
   if (eq.has('suelo')) l.push('Una esterilla o una alfombra');
   l.push('Ropa cómoda y agua para beber');
   return l;
@@ -226,7 +227,7 @@ function vEditor(id) {
     </div>
     <ul class="catalogo">${cat.map(e => {
       const dentro = editor.pasos.some(p => p.id === e.id);
-      const extras = e.eq.map(q => ({ silla: 'silla', pesas: 'pesas', goma: 'goma', suelo: 'en el suelo', maquina: 'máquina' })[q]).join(', ');
+      const extras = e.eq.map(q => ({ silla: 'silla', pesas: 'pesas', goma: 'goma', suelo: 'en el suelo', maquina: 'máquina', barra: 'barra' })[q]).join(', ');
       return `<li class="cat">
         <button class="ver-ficha" data-acc="ficha" data-id="${e.id}" aria-label="Ver cómo se hace: ${esc(e.n)}"><img class="miniatura" src="${foto(e.id)}" alt="" loading="lazy" width="96" height="64"><span class="lupa">${ic('lupa')}</span></button>
         <div><strong>${e.n}</strong><span>${GRUPOS[e.g]} · ${e.tipo === 'reps' ? `${e.cant} veces` : e.cant >= 120 ? `${e.cant / 60} min` : `${e.cant} s`}${extras ? ` · ${extras}` : ''}</span></div>

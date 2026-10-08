@@ -26,6 +26,12 @@ const EJERCICIOS = [
   { id: 'Walking_Treadmill', n: 'Caminar en la cinta', g: 'cardio', lugar: 'gim', eq: ['maquina'], tipo: 'seg', cant: 300,
     txt: 'Sube agarrado a las barras y empieza muy despacio. Camina a paso cómodo y ve subiendo la velocidad poco a poco.',
     ojo: 'Engánchate la pinza de seguridad a la ropa.' },
+  { id: 'Bicycling_Stationary', n: 'Bicicleta estática', g: 'cardio', lugar: 'gim', eq: ['maquina'], tipo: 'seg', cant: 300,
+    txt: 'Ajusta el sillín a la altura de la cadera. Pedalea a un ritmo cómodo, con la espalda recta y sin cargar el peso en el manillar.',
+    ojo: 'Resistencia baja al principio.' },
+  { id: 'Elliptical_Trainer', n: 'Elíptica', g: 'cardio', lugar: 'gim', eq: ['maquina'], tipo: 'seg', cant: 300,
+    txt: 'Sube agarrado a los brazos fijos de la máquina y empieza a pedalear despacio. Cuando te sientas seguro, agarra los brazos que se mueven.',
+    ojo: 'Sube y baja solo con la máquina parada.' },
 
   // Piernas
   { id: 'Sit_Squats', n: 'Sentarse y levantarse', g: 'piernas', lugar: 'ambos', eq: ['silla'], tipo: 'reps', cant: 10,
@@ -61,6 +67,30 @@ const EJERCICIOS = [
   { id: 'Thigh_Adductor', n: 'Cerrar piernas en máquina', g: 'piernas', lugar: 'gim', eq: ['maquina'], tipo: 'reps', cant: 12,
     txt: 'Sentado con la espalda apoyada, junta las piernas apretando las almohadillas y ábrelas despacio.',
     ojo: 'Abre solo hasta donde sea cómodo.' },
+  { id: 'Dumbbell_Squat', n: 'Sentadilla con mancuernas', g: 'piernas', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'De pie, con una mancuerna en cada mano y los brazos colgando a los lados. Baja como si fueras a sentarte, con el pecho alto, y sube empujando con los talones.',
+    ojo: 'Primero domina la sentadilla sin peso. Si dudas, ten una silla detrás.' },
+  { id: 'Goblet_Squat', n: 'Sentadilla con una pesa al pecho', g: 'piernas', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'Sujeta una mancuerna o una pesa rusa con las dos manos, pegada al pecho. Baja despacio con los codos entre las rodillas y vuelve a subir.',
+    ojo: 'Llevar la pesa delante ayuda a mantener la espalda recta.' },
+  { id: 'Plie_Dumbbell_Squat', n: 'Sentadilla abierta con pesa', g: 'piernas', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'Pies más abiertos que los hombros y puntas hacia fuera. Con una pesa colgando entre las piernas, baja recto y sube apretando los glúteos.',
+    ojo: 'Las rodillas siguen la dirección de las puntas de los pies.' },
+  { id: 'Stiff-Legged_Dumbbell_Deadlift', n: 'Peso muerto rumano con mancuernas', g: 'piernas', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'De pie, con una mancuerna en cada mano y las rodillas un poco dobladas. Echa la cadera hacia atrás y baja las pesas pegadas a las piernas, con la espalda recta. Sube apretando los glúteos.',
+    ojo: 'Espalda siempre recta: baja solo hasta donde puedas sin curvarla.' },
+  { id: 'Romanian_Deadlift', n: 'Peso muerto rumano con barra', g: 'piernas', lugar: 'gim', eq: ['barra'], tipo: 'reps', cant: 10,
+    txt: 'Sujeta la barra con las manos al ancho de los hombros. Con las rodillas un poco dobladas, echa la cadera atrás y baja la barra pegada a las piernas, con la espalda recta. Sube estirando la cadera.',
+    ojo: 'Empieza con la barra sola o con muy poco peso.' },
+  { id: 'Dumbbell_Lunges', n: 'Zancada con mancuernas', g: 'piernas', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 8,
+    txt: 'Con una pesa en cada mano, da un paso largo hacia delante y baja la rodilla de atrás hacia el suelo. Empuja con el pie de delante para volver. Alterna las piernas.',
+    ojo: 'Si te falta equilibrio, hazla sin pesas y agarrado a una silla.' },
+  { id: 'Step-up_with_Knee_Raise', n: 'Subir un escalón', g: 'piernas', lugar: 'ambos', eq: [], tipo: 'reps', cant: 8,
+    txt: 'Ponte delante de un escalón bajo y firme. Sube con un pie, lleva la otra rodilla hacia delante y baja despacio. Alterna la pierna que sube primero.',
+    ojo: 'Usa el primer peldaño de la escalera, agarrado a la barandilla.' },
+  { id: 'Calf_Press_On_The_Leg_Press_Machine', n: 'Gemelos en la prensa', g: 'piernas', lugar: 'gim', eq: ['maquina'], tipo: 'reps', cant: 15,
+    txt: 'Sentado en la prensa, apoya solo las puntas de los pies en el borde de la plataforma. Empuja con las puntas estirando los tobillos y vuelve despacio.',
+    ojo: 'Piernas estiradas pero sin bloquear las rodillas.' },
 
   // Equilibrio (siempre con apoyo)
   { id: 'Side_Leg_Raises', n: 'Pierna hacia el lado', g: 'equilibrio', lugar: 'ambos', eq: ['silla'], tipo: 'reps', cant: 8,
@@ -125,6 +155,27 @@ const EJERCICIOS = [
   { id: 'Machine_Triceps_Extension', n: 'Estirar los brazos en máquina', g: 'superior', lugar: 'gim', eq: ['maquina'], tipo: 'reps', cant: 12,
     txt: 'Con los brazos apoyados, empuja las asas estirando los codos y vuelve sin soltar de golpe.',
     ojo: 'Los hombros quietos; solo se mueven los codos.' },
+  { id: 'Hammer_Curls', n: 'Curl martillo', g: 'superior', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'De pie o sentado, con las palmas mirándose. Dobla los codos subiendo las pesas hacia los hombros y bájalas despacio.',
+    ojo: 'Los codos quietos, pegados al cuerpo.' },
+  { id: 'Front_Dumbbell_Raise', n: 'Brazos al frente', g: 'superior', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'Con una pesa en cada mano delante de los muslos, sube los brazos estirados hacia delante hasta la altura de los hombros y bájalos despacio.',
+    ojo: 'Si cuesta, alterna un brazo y luego el otro.' },
+  { id: 'Tricep_Dumbbell_Kickback', n: 'Patada de tríceps', g: 'superior', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'Inclínate hacia delante con la espalda recta y los codos pegados al cuerpo. Estira los brazos hacia atrás y vuelve a doblarlos despacio.',
+    ojo: 'Si se te cansa la espalda, apoya una mano en la mesa y hazlo con un brazo.' },
+  { id: 'One-Arm_Dumbbell_Row', n: 'Remo a una mano apoyado', g: 'superior', lugar: 'ambos', eq: ['pesas', 'silla'], tipo: 'reps', cant: 10,
+    txt: 'Apoya una mano y una rodilla en un banco o en una silla firme. Con la espalda recta, tira de la pesa hacia la cadera y bájala despacio. Luego el otro brazo.',
+    ojo: 'Mira al suelo para no forzar el cuello.' },
+  { id: 'Dumbbell_Shrug', n: 'Encoger los hombros con pesas', g: 'superior', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 12,
+    txt: 'De pie, con una pesa en cada mano, sube los hombros hacia las orejas, aguanta un segundo y bájalos despacio.',
+    ojo: 'Sin girar los hombros: solo arriba y abajo.' },
+  { id: 'Back_Flyes_-_With_Bands', n: 'Abrir los brazos con goma', g: 'superior', lugar: 'ambos', eq: ['goma'], tipo: 'reps', cant: 12,
+    txt: 'Ata la goma a algo firme a la altura del pecho. Con los brazos estirados al frente, ábrelos hacia atrás juntando los omóplatos y vuelve.',
+    ojo: 'Comprueba que la goma está bien sujeta antes de tirar.' },
+  { id: 'Wide-Grip_Lat_Pulldown', n: 'Jalón con agarre abierto', g: 'superior', lugar: 'gim', eq: ['maquina'], tipo: 'reps', cant: 12,
+    txt: 'Sentado con los muslos bajo el rodillo, agarra la barra con las manos abiertas. Tira hacia la parte alta del pecho y súbela despacio.',
+    ojo: 'Pecho alto y la barra siempre por delante.' },
 
   // Tronco
   { id: 'Dead_Bug', n: 'Brazo y pierna contrarios', g: 'tronco', lugar: 'ambos', eq: ['suelo'], tipo: 'reps', cant: 8,
@@ -133,6 +184,18 @@ const EJERCICIOS = [
   { id: 'Pallof_Press', n: 'Empujar sin girar', g: 'tronco', lugar: 'gim', eq: ['maquina'], tipo: 'reps', cant: 10,
     txt: 'De lado a la polea, sujeta el agarre junto al pecho. Estira los brazos al frente sin dejar que el cuerpo gire, y vuelve. Luego del otro lado.',
     ojo: 'Peso muy ligero: lo que trabaja es la tripa.' },
+  { id: 'Dumbbell_Side_Bend', n: 'Inclinarse de lado con pesa', g: 'tronco', lugar: 'ambos', eq: ['pesas'], tipo: 'reps', cant: 10,
+    txt: 'De pie, con una pesa en una mano y la otra en la cintura. Inclínate despacio hacia el lado de la pesa y vuelve recto. Luego el otro lado.',
+    ojo: 'Movimiento lento y sin girar el cuerpo.' },
+  { id: 'Standing_Cable_Wood_Chop', n: 'Leñador en polea', g: 'tronco', lugar: 'gim', eq: ['maquina'], tipo: 'reps', cant: 10,
+    txt: 'De lado a la polea alta, agarra el asa con las dos manos. Bájala en diagonal hacia la rodilla contraria girando el tronco y vuelve despacio. Luego del otro lado.',
+    ojo: 'Peso ligero; el giro sale de la cintura, no de los brazos.' },
+  { id: 'Plank', n: 'Plancha', g: 'tronco', lugar: 'ambos', eq: ['suelo'], tipo: 'seg', cant: 20,
+    txt: 'Apoya los antebrazos y las puntas de los pies, o las rodillas para que sea más fácil. Mantén el cuerpo recto de la cabeza a los pies, respirando normal.',
+    ojo: 'Más fácil todavía: con las manos en la encimera y el cuerpo inclinado.' },
+  { id: 'Side_Bridge', n: 'Plancha de lado', g: 'tronco', lugar: 'ambos', eq: ['suelo'], tipo: 'seg', cant: 20,
+    txt: 'Túmbate de lado apoyado en el antebrazo. Sube la cadera hasta que el cuerpo quede en línea recta y aguanta. A mitad de tiempo, cambia de lado.',
+    ojo: 'Con las rodillas dobladas y apoyadas es más fácil.' },
 
   // Estirar
   { id: 'Chin_To_Chest_Stretch', n: 'Barbilla al pecho', g: 'estirar', lugar: 'ambos', eq: [], tipo: 'seg', cant: 30,
@@ -168,6 +231,15 @@ const EJERCICIOS = [
   { id: 'Standing_Lateral_Stretch', n: 'Inclinarse de lado de pie', g: 'estirar', lugar: 'ambos', eq: [], tipo: 'seg', cant: 30,
     txt: 'De pie, una mano en la cadera y la otra detrás de la cabeza. Inclínate hacia el lado de la mano en la cadera. A mitad, al otro lado.',
     ojo: 'Rodillas un poco dobladas.' },
+  { id: 'Standing_Hamstring_and_Calf_Stretch', n: 'Estirar la parte de atrás de la pierna', g: 'estirar', lugar: 'ambos', eq: [], tipo: 'seg', cant: 30,
+    txt: 'Pon un pie delante con el talón apoyado y la punta hacia arriba. Dobla la pierna de atrás y echa la cadera atrás hasta notar el estiramiento. Puedes ayudarte con una toalla en el pie. A mitad, cambia.',
+    ojo: 'Agárrate a una silla si lo necesitas.' },
+  { id: 'Chest_And_Front_Of_Shoulder_Stretch', n: 'Estirar el pecho con un palo', g: 'estirar', lugar: 'ambos', eq: [], tipo: 'seg', cant: 30,
+    txt: 'Sujeta un palo de escoba con las manos bien separadas delante de ti. Súbelo despacio por encima de la cabeza hasta donde llegues sin dolor, y bájalo.',
+    ojo: 'Cuanto más separadas las manos, más fácil.' },
+  { id: 'One_Arm_Against_Wall', n: 'Brazo en la pared', g: 'estirar', lugar: 'ambos', eq: [], tipo: 'seg', cant: 30,
+    txt: 'Apoya el antebrazo doblado en la pared o en el marco de una puerta e inclínate suavemente hacia delante hasta notar el estiramiento. A mitad, cambia de brazo.',
+    ojo: 'Suave y sin rebotes.' },
 ];
 
 const GRUPOS = {
@@ -230,7 +302,7 @@ function crearRutina(min, lugar, opc = { pesas: true, goma: false }, rnd = Math.
   const series = min <= 10 ? 1 : min < 30 ? 2 : 3;
   const orden = lugar === 'gim'
     ? ['piernas', 'superior', 'piernas', 'superior', 'equilibrio', 'superior', 'tronco', 'piernas']
-    : ['piernas', 'superior', 'equilibrio', 'piernas', 'superior', 'equilibrio', 'superior', 'piernas'];
+    : ['piernas', 'superior', 'equilibrio', 'piernas', 'superior', 'equilibrio', 'tronco', 'superior', 'piernas'];
   const presuPrin = T * 0.65;
   const costeEj = series * (SERIE_REPS + 30);
   for (let i = 0, fallos = 0; fallos < orden.length; i++) {
