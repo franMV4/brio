@@ -330,15 +330,6 @@ body[data-ruta="entrenar"] main { max-width: 64rem; padding-top: 14px; }
 .redondo.hecho .disco { background: var(--botella); color: var(--esmalte); box-shadow: var(--sombra); }
 .redondo:active .disco { transform: scale(.94); }
 body[data-ruta="entrenar"] { padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px)); }
-@media (min-width: 900px) {
-  .reloj { position: static; background: none; box-shadow: none; padding: 0; gap: 24px; }
-  .dial { width: 200px; }
-  .dial-num { font-size: 2.6rem; }
-  .redondo { font-size: 1.05rem; }
-  .redondo .disco { width: 72px; height: 72px; }
-  .redondo.grande .disco { width: 96px; height: 96px; }
-  body[data-ruta="entrenar"] { padding-bottom: 32px; }
-}
 .descansa { background: var(--botella); color: var(--esmalte); border-radius: var(--radio); padding: 24px 20px; display: grid; gap: 10px; }
 .descansa h1 { font-size: clamp(2.6rem, 11vw, 4rem); font-weight: 800; }
 .descansa p { font-size: 1.25rem; }
@@ -350,7 +341,7 @@ body[data-ruta="entrenar"] { padding-bottom: calc(150px + env(safe-area-inset-bo
 .en-pausa .dial-num { color: var(--tomate); }
 @media (min-width: 900px) {
   .fase.trabajo { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; column-gap: 32px; }
-  .fase.trabajo .foto { grid-row: span 3; }
+  .fase.trabajo .foto { grid-row: span 2; }
   .fase.en-descanso { grid-template-columns: 1fr 1fr; column-gap: 32px; align-items: center; }
 }
 
@@ -376,6 +367,46 @@ body[data-ruta="entrenar"] { padding-bottom: calc(150px + env(safe-area-inset-bo
 .aviso.ver { opacity: 1; transform: translate(-50%, 0); }
 
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+
+/* Tablet: letra algo mayor, más columnas y los mandos del reloj centrados */
+@media (min-width: 700px) {
+  html { font-size: 106.25%; }
+  main, .cab { max-width: 46rem; }
+  .accesos { grid-template-columns: 1fr 1fr; }
+  .accesos li:first-child { grid-column: 1 / -1; }
+  .acceso { height: 100%; }
+  .mandos-tiempo { grid-template-columns: repeat(6, 1fr); }
+  .interruptores { grid-template-columns: 1fr 1fr; }
+  .paso { grid-template-columns: 120px minmax(0, 1fr) auto; }
+  .paso .miniatura { width: 120px; height: 80px; }
+  .catalogo { grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+  .cat { grid-template-columns: 96px minmax(0, 1fr); align-content: start; }
+  .cat .btn { grid-column: 1 / -1; }
+  .fichero { grid-template-columns: 1fr 1fr; align-items: start; }
+  .tarjeta-tira { height: 84px; }
+  dialog.ficha { width: min(42rem, calc(100% - 48px)); }
+  .tabs { padding-inline: max(8px, calc((100% - 46rem) / 2)); }
+  .reloj { padding-inline: max(16px, calc((100% - 52rem) / 2)); gap: 28px; }
+  .dial { width: 136px; }
+  .dial-num { font-size: 2.3rem; }
+  .redondo { font-size: 1.05rem; }
+  .redondo .disco { width: 72px; height: 72px; }
+  .redondo.grande .disco { width: 96px; height: 96px; }
+  .redondo.grande { margin-top: -12px; }
+  body[data-ruta="entrenar"] { padding-bottom: calc(190px + env(safe-area-inset-bottom, 0px)); }
+}
+/* Tablet en horizontal: el catálogo a la izquierda y tu rutina siempre a la vista a la derecha */
+@media (min-width: 1000px) {
+  body[data-ruta="avanzado"] main, body[data-ruta="editar"] main { max-width: 74rem; grid-template-columns: minmax(0, 1fr) 25rem; column-gap: 32px; align-items: start; }
+  body[data-ruta="avanzado"] main > *, body[data-ruta="editar"] main > * { grid-column: 1; }
+  #tu-rutina { grid-column: 2 !important; grid-row: 1 / span 5; position: sticky; top: 16px; max-height: calc(100vh - var(--abajo) - 32px); overflow: auto; border-radius: var(--radio); }
+  #tu-rutina .paso { grid-template-columns: 76px minmax(0, 1fr) auto; }
+  #tu-rutina .paso .miniatura { width: 76px; height: 51px; }
+  body[data-ruta="avanzado"] .cab, body[data-ruta="editar"] .cab { max-width: 74rem; }
+  body[data-ruta="avanzado"] .catalogo, body[data-ruta="editar"] .catalogo { grid-template-columns: 1fr; }
+  body[data-ruta="avanzado"] .cat, body[data-ruta="editar"] .cat { grid-template-columns: 96px minmax(0, 1fr) auto; }
+  body[data-ruta="avanzado"] .cat .btn, body[data-ruta="editar"] .cat .btn { grid-column: auto; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
